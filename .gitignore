@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+.DS_Store
+10_YouTubeCloneApp_UserStories.docx
+10_YouTubeCloneApp_UserStories.pdf
