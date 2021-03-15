@@ -105,3 +105,4 @@ dist
 .DS_Store
 10_YouTubeCloneApp_UserStories.docx
 10_YouTubeCloneApp_UserStories.pdf
+package-lock.json
