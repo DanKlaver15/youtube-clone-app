@@ -3,7 +3,7 @@ const router = express.Router();
 const Joi = require("joi");
 const { Comment } = require("../models/Comment");
 
-router.get("/:videoId", async (req, res) => {
+router.get("/comments/:videoId", async (req, res) => {
   try {
     const comments = await Comment.find({ videoId: req.params.videoId });
 
