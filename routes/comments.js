@@ -14,6 +14,12 @@ router.get("/:videoId", async (req, res) => {
 });
 
 router.post("/:videoId", async (req, res) => {
+  const { error } = validateComment(req.body);
+
+  if (error) {
+    return res.status(400).send(error);
+  }
+
   let comment = new Comment({ ...req.body, videoId: req.params.videoId });
 
   try {
@@ -24,5 +30,13 @@ router.post("/:videoId", async (req, res) => {
     return res.status(400).send(`Database Error: ${err}`);
   }
 });
+
+function validateComment(comment) {
+  const schema = Joi.object({
+    text: Joi.string().min(2).max(300).required(),
+    videoId: Joi.string().required(),
+  });
+  return schema.validate(comment);
+}
 
 module.exports = router;
