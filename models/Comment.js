@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import { replySchema } from "./Reply";
+const mongoose = require("mongoose");
+const { replySchema } = require("./Reply");
 
 const commentSchema = new mongoose.Schema({
   text: { type: String, required: true, minlength: 2, maxlength: 300 },
