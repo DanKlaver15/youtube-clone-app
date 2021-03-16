@@ -7,4 +7,6 @@ const replySchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
 });
 
-module.exports = replySchema;
+const Reply = new mongoose.model("Reply", replySchema);
+
+module.exports = { replySchema, Reply };

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import replySchema from "./Reply";
+import { replySchema } from "./Reply";
 
 const commentSchema = new mongoose.Schema({
   text: { type: String, required: true, minlength: 2, maxlength: 300 },
@@ -10,4 +10,6 @@ const commentSchema = new mongoose.Schema({
   videoId: { type: String, required: true },
 });
 
-module.exports = commentSchema;
+const Comment = mongoose.model("Comment", commentSchema);
+
+module.exports = Comment;
