@@ -31,6 +31,20 @@ router.post("/:videoId", async (req, res) => {
   }
 });
 
+router.put("/:commentId", async (req, res) => {
+  try {
+    const comment = await Comment.findByIdAndUpdate(
+      req.params.commentId,
+      req.body,
+      { new: true }
+    );
+
+    return res.send(comment);
+  } catch (err) {
+    return res.status(400).send(`Database Error: ${err}`);
+  }
+});
+
 function validateComment(comment) {
   const schema = Joi.object({
     text: Joi.string().min(2).max(300).required(),
