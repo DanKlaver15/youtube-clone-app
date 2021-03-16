@@ -30,6 +30,32 @@ router.post("/:commentId", async (req, res) => {
   }
 });
 
+router.put("/:commentId/:replyId", async (req, res) => {
+  try {
+    const comment = await Comment.findById(req.params.commentId);
+
+    if (!comment)
+      return res
+        .status(404)
+        .send("The comment with the given id was not found.");
+
+    let reply = comment.replies.id(req.params.replyId);
+
+    if (!reply)
+      return res.status(404).send("The reply with the given id was not found.");
+
+    Object.keys(req.body).forEach((key) => {
+      reply[key] = req.body[key];
+    });
+
+    comment.save();
+
+    return res.send(reply);
+  } catch (err) {
+    return res.status(400).send(`Database Error: ${err}`);
+  }
+});
+
 function validateReply(reply) {
   const schema = Joi.object({
     text: Joi.string().min(2).max(300).required(),
