@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { loadVideos } from "./videos/thunks";
+import { loadVideos } from "../videos/thunks";
 
 const VideoSearch = ({ videos, onSearch }) => {
   const [input, setInput] = useState("");
