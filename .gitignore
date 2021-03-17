@@ -107,3 +107,4 @@ dist
 10_YouTubeCloneApp_UserStories.pdf
 package-lock.json
 config/default.json
+front_end/src/apiKey.js
