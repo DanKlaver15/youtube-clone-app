@@ -1,5 +1,6 @@
 import VideoSearch from "./Components/VideoSearch";
 import VideoList from "./Components/VideoList";
+import Video from "./Components/Video";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
                   Section title
                 </h2>
                 <div className="rounded-lg bg-white overflow-hidden shadow">
-                  <div className="p-6"></div>
+                  <div className="p-6">
+                    <Video />
+                  </div>
                 </div>
               </section>
             </div>

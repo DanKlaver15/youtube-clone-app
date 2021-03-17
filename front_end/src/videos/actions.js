@@ -13,3 +13,9 @@ export const LOAD_VIDEOS_IN_FAILURE = "LOAD_VIDEOS_IN_FAILURE";
 export const loadVideosInFailure = () => ({
   type: LOAD_VIDEOS_IN_FAILURE,
 });
+
+export const UPDATE_ACTIVE_VIDEO = "UPDATE_ACTIVE_VIDEO";
+export const updateActiveVideo = (video) => ({
+  type: UPDATE_ACTIVE_VIDEO,
+  payload: { video },
+});

@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+import { updateActiveVideo } from "../videos/actions";
 
-const VideoList = ({ videos }) => {
+const VideoList = ({ videos, onVideoSelect }) => {
   return (
     <ul className="divide-y divide-gray-200">
       {videos.map((video) => {
@@ -9,7 +10,10 @@ const VideoList = ({ videos }) => {
           <li className="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
             <div className="flex justify-between space-x-3">
               <div className="min-w-0 flex-1">
-                <button href="#" className="block focus:outline-none">
+                <button
+                  onClick={() => onVideoSelect(video)}
+                  className="block focus:outline-none"
+                >
                   <span className="absolute inset-0" aria-hidden="true"></span>
                   <p className="line-clamp-2 text-sm font-medium text-gray-900 text-left">
                     {video.snippet.title}
@@ -37,6 +41,11 @@ const VideoList = ({ videos }) => {
 
 const mapStateToProps = (state) => ({
   videos: state.videos,
+  activeVideo: state.activeVideo,
 });
 
-export default connect(mapStateToProps)(VideoList);
+const mapDispatchToProps = (dispatch) => ({
+  onVideoSelect: (video) => dispatch(updateActiveVideo(video)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(VideoList);
