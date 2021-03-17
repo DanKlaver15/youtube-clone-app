@@ -12,7 +12,7 @@ export const loadVideos = (searchParam) => async (dispatch, getState) => {
     dispatch(loadVideosInProgress());
 
     const response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?q=${searchParam}&key=${apiKey}&maxResults=20&part=snippet`
+      `https://www.googleapis.com/youtube/v3/search?q=${searchParam}&key=${apiKey}&maxResults=20&part=snippet&type=video`
     );
 
     const videos = await response.data.items;
