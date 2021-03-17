@@ -10,7 +10,7 @@ const Video = ({ video }) => {
       width="640"
       height="390"
       src={`http://www.youtube.com/embed/${video.id.videoId}`}
-      frameborder="0"
+      frameBorder="0"
     ></iframe>
   ) : (
     <p>No video selected</p>
