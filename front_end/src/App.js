@@ -1,4 +1,5 @@
-import VideoSearch from "./VideoSearch";
+import VideoSearch from "./Components/VideoSearch";
+import VideoList from "./Components/VideoList";
 
 function App() {
   return (
@@ -24,13 +25,15 @@ function App() {
               </section>
             </div>
 
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4 max-h-48">
               <section aria-labelledby="section-2-title">
                 <h2 className="sr-only" id="section-2-title">
                   Section title
                 </h2>
-                <div className="rounded-lg bg-white overflow-hidden shadow">
-                  <div className="p-6"></div>
+                <div className="rounded-lg bg-white overflow-hidden overflow-y-auto shadow max-h-96">
+                  <div className="p-6">
+                    <VideoList />
+                  </div>
                 </div>
               </section>
             </div>
