@@ -3,7 +3,7 @@ import Comment from "./Comment";
 import { connect } from "react-redux";
 
 const CommentList = ({ activeVideo, isCommentsLoading }) => {
-  return !isCommentsLoading && activeVideo ? (
+  return activeVideo.comments.length > 0 ? (
     <ul className="space-y-3">
       {activeVideo.comments.map((comment) => {
         return <Comment comment={comment} />;

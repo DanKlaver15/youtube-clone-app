@@ -33,7 +33,9 @@ export const loadComments = (video) => async (dispatch, getState) => {
   try {
     dispatch(loadCommentsInProgress());
 
-    const response = await axios.get(`http://localhost:5000/api/comments/4`);
+    const response = await axios.get(
+      `http://localhost:5000/api/comments/${video.id.videoId}`
+    );
 
     const comments = await response.data;
 
