@@ -20,6 +20,12 @@ export const updateComment = (comment) => ({
   payload: { comment },
 });
 
+export const ADD_COMMENT = "ADD_COMMENT";
+export const addComment = (comment) => ({
+  type: ADD_COMMENT,
+  payload: { comment },
+});
+
 export const UPDATE_COMMENTS = "UPDATE_COMMENTS";
 export const updateComments = (comment) => ({
   type: UPDATE_COMMENTS,

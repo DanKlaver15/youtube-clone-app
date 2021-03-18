@@ -3,6 +3,7 @@ import {
   LOAD_COMMENTS_IN_SUCCESS,
   LOAD_COMMENTS_IN_FAILURE,
   UPDATE_COMMENT,
+  ADD_COMMENT,
 } from "./actions";
 
 export const commentsLoading = (state = false, action) => {
@@ -39,6 +40,10 @@ export const comments = (state = [], action) => {
         }
         return stateComment;
       });
+    }
+    case ADD_COMMENT: {
+      const { comment } = payload;
+      return [comment, ...state];
     }
     default:
       return state;

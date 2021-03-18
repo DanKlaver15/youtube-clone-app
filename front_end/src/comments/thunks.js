@@ -1,12 +1,30 @@
 import axios from "axios";
-import { updateActiveVideo } from "../videos/actions";
 
 import {
+  addComment,
   updateComment,
   loadCommentsInProgress,
   loadCommentsInSuccess,
   loadCommentsInFailure,
 } from "./actions";
+
+export const addCommentRequest = (comment, videoId) => async (
+  dispatch,
+  getState
+) => {
+  try {
+    const response = await axios.post(
+      `http://localhost:5000/api/comments/${videoId}`,
+      comment
+    );
+
+    const addedComment = response.data;
+
+    dispatch(addComment(addedComment));
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 export const updateCommentRequest = (comment) => async (dispatch, getState) => {
   try {

@@ -2,6 +2,7 @@ import VideoSearch from "./Components/VideoSearch";
 import VideoList from "./Components/VideoList";
 import Video from "./Components/Video";
 import CommentList from "./Components/CommentList";
+import AddCommentInput from "./Components/AddCommentInput";
 
 function App() {
   return (
@@ -29,7 +30,10 @@ function App() {
               </section>
 
               <div>
-                <h1 className="sr-only">Comments</h1>
+                <h2>Comments</h2>
+                <div className="mb-2">
+                  <AddCommentInput />
+                </div>
                 <CommentList />
               </div>
             </div>
