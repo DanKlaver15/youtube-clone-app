@@ -1,10 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import {
-  videos,
-  isLoading,
-  isCommentsLoading,
-  activeVideo,
-} from "./videos/reducers";
+import { videos, isLoading, activeVideo } from "./videos/reducers";
 
 import { comments, commentsLoading } from "./comments/reducers";
 import thunk from "redux-thunk";
@@ -14,7 +9,6 @@ const reducers = {
   videos,
   isLoading,
   activeVideo,
-  isCommentsLoading,
   comments,
   commentsLoading,
 };
