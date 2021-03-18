@@ -1,8 +1,7 @@
 import VideoSearch from "./Components/VideoSearch";
 import VideoList from "./Components/VideoList";
 import Video from "./Components/Video";
-import CommentList from "./Components/CommentList";
-import AddCommentInput from "./Components/AddCommentInput";
+import Comments from "./Components/Comments";
 
 function App() {
   return (
@@ -29,13 +28,7 @@ function App() {
                 </div>
               </section>
 
-              <div>
-                <h2>Comments</h2>
-                <div className="mb-2">
-                  <AddCommentInput />
-                </div>
-                <CommentList />
-              </div>
+              <Comments />
             </div>
 
             <div className="grid grid-cols-1 gap-4 max-h-48">
