@@ -13,25 +13,8 @@ export const activeVideo = (state = null, action) => {
 
   switch (type) {
     case UPDATE_ACTIVE_VIDEO: {
-      return payload;
-    }
-    default:
-      return state;
-  }
-};
-
-export const isCommentsLoading = (state = false, action) => {
-  const { type } = action;
-
-  switch (type) {
-    case LOAD_COMMENTS_IN_SUCCESS: {
-      return false;
-    }
-    case LOAD_COMMENTS_IN_PROGRESS: {
-      return true;
-    }
-    case LOAD_COMMENTS_IN_FAILURE: {
-      return false;
+      const { video } = payload;
+      return video;
     }
     default:
       return state;
