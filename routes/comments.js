@@ -48,7 +48,6 @@ router.put("/:commentId", async (req, res) => {
 function validateComment(comment) {
   const schema = Joi.object({
     text: Joi.string().min(2).max(300).required(),
-    videoId: Joi.string().required(),
   });
   return schema.validate(comment);
 }
