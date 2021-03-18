@@ -5,6 +5,10 @@ import {
   loadVideosInProgress,
   loadVideosInFailure,
   loadVideosInSuccess,
+  loadCommentsInProgress,
+  loadCommentsInFailure,
+  loadCommentsInSuccess,
+  updateActiveVideo,
 } from "./actions";
 
 export const loadVideos = (searchParam) => async (dispatch, getState) => {
@@ -20,6 +24,22 @@ export const loadVideos = (searchParam) => async (dispatch, getState) => {
     dispatch(loadVideosInSuccess(videos));
   } catch (err) {
     dispatch(loadVideosInFailure());
+    console.log(err);
+  }
+};
+
+export const loadComments = (video) => async (dispatch, getState) => {
+  try {
+    dispatch(loadCommentsInProgress());
+
+    const response = await axios.get(`http://localhost:5000/api/comments/4`);
+
+    const comments = await response.data;
+
+    dispatch(loadCommentsInSuccess());
+    dispatch(updateActiveVideo(video, comments));
+  } catch (err) {
+    dispatch(loadCommentsInFailure());
     console.log(err);
   }
 };

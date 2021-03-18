@@ -3,6 +3,9 @@ import {
   LOAD_VIDEOS_IN_SUCCESS,
   LOAD_VIDEOS_IN_FAILURE,
   UPDATE_ACTIVE_VIDEO,
+  LOAD_COMMENTS_IN_PROGRESS,
+  LOAD_COMMENTS_IN_SUCCESS,
+  LOAD_COMMENTS_IN_FAILURE,
 } from "./actions";
 
 export const activeVideo = (state = null, action) => {
@@ -10,8 +13,25 @@ export const activeVideo = (state = null, action) => {
 
   switch (type) {
     case UPDATE_ACTIVE_VIDEO: {
-      const { video } = payload;
-      return video;
+      return payload;
+    }
+    default:
+      return state;
+  }
+};
+
+export const isCommentsLoading = (state = false, action) => {
+  const { type } = action;
+
+  switch (type) {
+    case LOAD_COMMENTS_IN_SUCCESS: {
+      return false;
+    }
+    case LOAD_COMMENTS_IN_PROGRESS: {
+      return true;
+    }
+    case LOAD_COMMENTS_IN_FAILURE: {
+      return false;
     }
     default:
       return state;
