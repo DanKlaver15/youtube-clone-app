@@ -43,7 +43,12 @@ const Comment = ({ comment, onUpdateComment }) => (
             </button>
           </span>
           <span className="inline-flex items-center text-sm">
-            <button className="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+            <button
+              onClick={() =>
+                onUpdateComment({ ...comment, dislikes: comment.dislikes + 1 })
+              }
+              className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
+            >
               <svg
                 className="h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"

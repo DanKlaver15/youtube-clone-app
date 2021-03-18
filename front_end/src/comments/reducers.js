@@ -2,6 +2,7 @@ import {
   LOAD_COMMENTS_IN_PROGRESS,
   LOAD_COMMENTS_IN_SUCCESS,
   LOAD_COMMENTS_IN_FAILURE,
+  UPDATE_COMMENT,
 } from "./actions";
 
 export const commentsLoading = (state = false, action) => {
@@ -29,6 +30,15 @@ export const comments = (state = [], action) => {
     case LOAD_COMMENTS_IN_SUCCESS: {
       const { comments } = payload;
       return comments;
+    }
+    case UPDATE_COMMENT: {
+      const { comment } = payload;
+      return state.map((stateComment) => {
+        if (comment._id === stateComment._id) {
+          return comment;
+        }
+        return stateComment;
+      });
     }
     default:
       return state;

@@ -3,11 +3,7 @@ import Comment from "./Comment";
 import { connect } from "react-redux";
 import { updateCommentRequest } from "../comments/thunks";
 
-const CommentList = ({
-  comments,
-  isCommentsLoading,
-  onUpdateComment = () => {},
-}) => {
+const CommentList = ({ comments, isCommentsLoading, onUpdateComment }) => {
   return comments.length > 0 ? (
     <ul className="space-y-3">
       {comments.map((comment) => {
@@ -15,7 +11,7 @@ const CommentList = ({
           <Comment
             key={comment._id}
             comment={comment}
-            onUpdateComment={(comment) => onUpdateComment(comment)}
+            onUpdateComment={onUpdateComment}
           />
         );
       })}
@@ -30,8 +26,8 @@ const mapStateToProps = (state) => ({
   isCommentsLoading: state.commentsLoading,
 });
 
-// const mapDispatchToProps = (dispatch) => ({
-//   onUpdateVideo: (video) => dispatch(updateCommentRequest(video)),
-// });
+const mapDispatchToProps = (dispatch) => ({
+  onUpdateComment: (comment) => dispatch(updateCommentRequest(comment)),
+});
 
-export default connect(mapStateToProps)(CommentList);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentList);

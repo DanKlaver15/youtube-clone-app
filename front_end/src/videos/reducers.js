@@ -3,9 +3,6 @@ import {
   LOAD_VIDEOS_IN_SUCCESS,
   LOAD_VIDEOS_IN_FAILURE,
   UPDATE_ACTIVE_VIDEO,
-  LOAD_COMMENTS_IN_PROGRESS,
-  LOAD_COMMENTS_IN_SUCCESS,
-  LOAD_COMMENTS_IN_FAILURE,
 } from "./actions";
 
 export const activeVideo = (state = null, action) => {
