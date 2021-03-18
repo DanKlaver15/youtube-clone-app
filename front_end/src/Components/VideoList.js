@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updateActiveVideo } from "../videos/actions";
+import { loadComments } from "../videos/thunks";
 import VideoListItem from "./VideoListItem";
 
 const VideoList = ({ videos, onVideoSelect }) => {
@@ -25,7 +25,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onVideoSelect: (video) => dispatch(updateActiveVideo(video)),
+  onVideoSelect: (video) => dispatch(loadComments(video)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoList);
