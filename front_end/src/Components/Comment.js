@@ -1,6 +1,6 @@
 import React from "react";
 
-const Comment = ({ comment }) => (
+const Comment = ({ comment, onUpdateComment }) => (
   <li className="list-none px-4 py-4 sm:px-6 rounded-lg bg-white shadow">
     <article aria-labelledby="question-title-41150">
       <div>
@@ -35,7 +35,12 @@ const Comment = ({ comment }) => (
       <div className="mt-6 flex justify-between space-x-8">
         <div className="flex space-x-6">
           <span className="inline-flex items-center text-sm">
-            <button className="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+            <button
+              onClick={() =>
+                onUpdateComment({ ...comment, likes: comment.likes + 1 })
+              }
+              className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
+            >
               <svg
                 className="h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"

@@ -5,6 +5,8 @@ import {
   isCommentsLoading,
   activeVideo,
 } from "./videos/reducers";
+
+import { comments, commentsLoading } from "./comments/reducers";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
@@ -13,6 +15,8 @@ const reducers = {
   isLoading,
   activeVideo,
   isCommentsLoading,
+  comments,
+  commentsLoading,
 };
 
 const rootReducer = combineReducers(reducers);

@@ -1,9 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { loadComments } from "../videos/thunks";
+import { loadCommentsRequest } from "../comments/thunks";
+import { updateActiveVideo } from "../videos/actions";
 import VideoListItem from "./VideoListItem";
 
-const VideoList = ({ videos, onVideoSelect }) => {
+const VideoList = ({ videos, onVideoSelect, onLoadComments }) => {
+  const onSelect = (video) => {
+    onVideoSelect(video);
+    onLoadComments(video.id.videoId);
+  };
+
   return (
     <ul className="divide-y divide-gray-200">
       {videos.map((video) => {
@@ -11,7 +17,7 @@ const VideoList = ({ videos, onVideoSelect }) => {
           <VideoListItem
             key={video.id.videoId}
             video={video}
-            onSelect={onVideoSelect}
+            onSelect={onSelect}
           />
         );
       })}
@@ -25,7 +31,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onVideoSelect: (video) => dispatch(loadComments(video)),
+  onVideoSelect: (video) => dispatch(updateActiveVideo(video)),
+  onLoadComments: (videoId) => dispatch(loadCommentsRequest(videoId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoList);
