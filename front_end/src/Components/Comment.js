@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import avatar from "../images/Brent_Solomon.png";
+import { Avatars, RandomNumber } from "./Avatars";
 import { connect } from "react-redux";
 import { updateCommentRequest } from "../comments/thunks";
 import ReplyList from "./ReplyList";
@@ -16,7 +16,12 @@ const Comment = ({ comment, onUpdateComment, onReply }) => {
         <div>
           <div className="flex space-x-3">
             <div className="flex-shrink-0">
-              <img src={avatar} alt="" width="50" height="50"></img>
+              <img
+                src={Avatars[RandomNumber()]}
+                alt=""
+                width="50"
+                height="50"
+              ></img>
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-gray-900">Anonymous</p>
