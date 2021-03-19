@@ -5,12 +5,8 @@ import Comments from "./Components/Comments";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="pb-24 bg-indigo-600">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <VideoSearch />
-        </div>
-      </header>
+    <div className="h-screen bg-gray-100">
+      <header className="pb-24 bg-indigo-600 min-h-250"></header>
       <main className="-mt-24 pb-8">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="sr-only">Page title</h1>
@@ -36,8 +32,9 @@ function App() {
                 <h2 className="sr-only" id="section-2-title">
                   Section title
                 </h2>
-                <div className="rounded-lg bg-white overflow-hidden overflow-y-auto shadow max-h-96">
-                  <div className="p-6">
+                <div className="rounded-lg bg-white shadow">
+                  <VideoSearch />
+                  <div className="p-6 overflow-hidden overflow-y-auto h-75">
                     <VideoList />
                   </div>
                 </div>
