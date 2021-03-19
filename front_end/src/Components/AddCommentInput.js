@@ -26,6 +26,7 @@ const AddCommentInput = ({ activeVideo, onSubmit }) => {
           />
         </div>
         <button
+          disabled={input.length < 3}
           onClick={() => {
             setInput("");
             onSubmit({ text: input }, activeVideo.id.videoId);
