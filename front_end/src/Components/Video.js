@@ -13,6 +13,7 @@ const Video = ({ video }) => {
           height="390"
           src={`http://www.youtube.com/embed/${video.id.videoId}`}
           frameBorder="0"
+          allowFullScreen="allowFullScreen"
         ></iframe>
       </div>
       <div className="mt-3">
