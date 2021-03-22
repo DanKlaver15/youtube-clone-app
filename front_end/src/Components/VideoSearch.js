@@ -5,9 +5,18 @@ import { loadVideos } from "../videos/thunks";
 const VideoSearch = ({ videos, onSearch }) => {
   const [input, setInput] = useState("");
 
+  const handleEnter = (event) => {
+    if (event.which === 13) {
+      onSearch(input);
+    }
+  };
+
   return (
     <>
-      <div className="border-t border-white border-opacity-20 px-6 pt-6">
+      <div
+        onKeyDown={handleEnter}
+        className="border-t border-white border-opacity-20 px-6 pt-6"
+      >
         <div>
           <div className="max-w-md flex w-full mx-auto rounded-md">
             <label htmlFor="search" className="sr-only">
