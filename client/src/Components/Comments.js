@@ -6,7 +6,7 @@ import CommentList from "./CommentList";
 const Comments = ({ activeVideo }) => {
   return activeVideo ? (
     <div>
-      <h2>Comments</h2>
+      <h3 class="text-lg leading-6 font-medium text-gray-900">Comments</h3>
       <div className="mb-2">
         <AddCommentInput />
       </div>

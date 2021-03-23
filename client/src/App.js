@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="h-screen bg-gray-100">
       <header className="pb-24 bg-indigo-600 min-h-250">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <div class="max-w-xl pt-12">
-            <h2 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+          <div className="max-w-xl pt-12">
+            <h2 className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
               YouTube Clone
             </h2>
           </div>

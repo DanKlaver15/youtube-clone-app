@@ -4,7 +4,9 @@ import { connect } from "react-redux";
 import { updateCommentRequest } from "../comments/thunks";
 
 const CommentList = ({ comments, isCommentsLoading, onUpdateComment }) => {
-  return comments.length > 0 ? (
+  return isCommentsLoading ? (
+    <p>Loading...</p>
+  ) : comments.length > 0 ? (
     <ul className="space-y-3">
       {comments.map((comment) => {
         return (
