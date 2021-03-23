@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2281ae6a.chunk.css",
+    "main.js": "/static/js/main.f15f8eed.chunk.js",
+    "main.js.map": "/static/js/main.f15f8eed.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.900dd88b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.900dd88b.js.map",
+    "static/js/2.bda6ed98.chunk.js": "/static/js/2.bda6ed98.chunk.js",
+    "static/js/2.bda6ed98.chunk.js.map": "/static/js/2.bda6ed98.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.2281ae6a.chunk.css.map": "/static/css/main.2281ae6a.chunk.css.map",
+    "static/js/2.bda6ed98.chunk.js.LICENSE.txt": "/static/js/2.bda6ed98.chunk.js.LICENSE.txt",
+    "static/media/Brent_Solomon.9a6e7c9e.png": "/static/media/Brent_Solomon.9a6e7c9e.png",
+    "static/media/Bronson.06de46ea.jpeg": "/static/media/Bronson.06de46ea.jpeg",
+    "static/media/Charles.c416f2b4.png": "/static/media/Charles.c416f2b4.png",
+    "static/media/JJ.6eb4ef8f.png": "/static/media/JJ.6eb4ef8f.png",
+    "static/media/Michael.92b3ee31.png": "/static/media/Michael.92b3ee31.png",
+    "static/media/Pascal.0e114e29.jpeg": "/static/media/Pascal.0e114e29.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.900dd88b.js",
+    "static/js/2.bda6ed98.chunk.js",
+    "static/css/main.2281ae6a.chunk.css",
+    "static/js/main.f15f8eed.chunk.js"
+  ]
+}
